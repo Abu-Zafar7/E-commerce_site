@@ -1,0 +1,30 @@
+{% extends 'homepage.html' %}
+{% load static %}
+
+
+{% block content %}
+	<div class="row">
+        {% for product in products %}
+    <div class="col-lg-4">
+        <img class="thumbnail" src="{{ product.imageURL }}">
+        <div class="box-element product">
+            <h6><strong>{{ product.name }}</strong></h6>
+            <hr>
+
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <button data-product="{{product.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
+                    <a class="btn btn-outline-success ms-2" href="#">View</a>
+                </div>
+                <h4 class="mb-0 ms-auto"><strong>&#8377;{{ product.price }}</strong></h4>
+            </div>
+
+        </div>
+        
+    </div>
+    {% endfor %}
+    </div>
+    {% endblock content%}
+
+
+
